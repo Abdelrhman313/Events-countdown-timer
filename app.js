@@ -19,6 +19,7 @@ $clear.addEventListener("click",function (e){
 export const updateClock = ($eventTitle = 'Your Event') => {
   // get time that insert by the user from the input
   let dateInput = new Date($eventDateAndTime.value)
+  let time1 = new Date($eventDateAndTime.value).getTime();
   let dateTimeNow = new Date();
   // check if the time is old else create a new event
   if(dateInput<dateTimeNow){
@@ -42,7 +43,7 @@ export const updateClock = ($eventTitle = 'Your Event') => {
 
   // create the update count down timer that update it self after 1 sec
   const timeinterval = setInterval(function () {
-    let time1 = new Date($eventDateAndTime.value).getTime();
+
     // get the time of the moment that function start at
     let timeNow = new Date();
     const time = timeNow.getTime();
